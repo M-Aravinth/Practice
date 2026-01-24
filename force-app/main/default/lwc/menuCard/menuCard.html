@@ -1,0 +1,20 @@
+<template>
+
+    <div class="slds-grid slds-wrap">
+        <template for:each={menuItems} for:item="Item">
+            <div class="slds-col slds-size_4-of-12" key={Item.Id}>
+                <span>
+                    <lightning-card title={Item.Name} icon-name="">
+                        <img src={Item.imageUrl} alt={Item.Name} class="slds-m-bottom_medium" style="max-height:150px; max-width:100%; border-radius:8px;" />
+                        <div class="slds-p-around_medium slds-text-align_left">
+                            <p class="slds-text-body_regular slds-m-bottom_medium">{Item.Price__c}</p>
+                            <p class="slds-text-body_regular slds-m-bottom_medium">{Item.Available_Quantity__c}</p>
+                            <p class="slds-text-body_regular slds-m-bottom_medium">{Item.Is_Out_of_Stock__c}</p>
+                        </div>
+                    </lightning-card>
+                </span>
+            </div>
+
+        </template>
+    </div>
+</template>
