@@ -1,0 +1,14 @@
+<template>
+    <Lightning-Card title = 'Opportunity Records10' icon-name = 'standard:opportunity'>
+        <div>
+            <lightning-datatable
+                key-field="Id"
+                data={opportunityRecords}
+                columns={columns}
+                onsave={handleSave}
+                draft-values={draftValues}
+            ></lightning-datatable>
+        </div> 
+    </Lightning-Card>
+        
+</template>
