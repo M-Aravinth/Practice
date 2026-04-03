@@ -7,11 +7,21 @@ public with sharing class AccountDataTableController {
     @AuraEnabled
     Public static Void updateAccounts(List<Account> data){
         List<Account> accountList = new List<Account>(data); 
-        try{
+        /*try{
             System.Database.Update(accountList);
         }Catch(Exception e){
 
+        }*/
+         List<Account> accountLists = new List<Account>();
+        for(Account acc : accountList){
+            accountLists.add(new Account(Id = null,Phone = acc.Phone));
         }
+        try{
+            System.Database.Update(accountLists);
+        }Catch(Exception e){
+
+        }
+        //System.Database.Update(accountLists);
 
     }
 }

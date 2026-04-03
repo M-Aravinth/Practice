@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title = " Related Contacts and Opportnunities">
+        <template lwc:if = {showData}>
+            <div>
+                <lightning-formatted-text value = "Contact List"></lightning-formatted-text>
+                <lightning-datatable 
+                    key-field = 'Id'
+                    data = {contactList}
+                    columns = {contactCols}
+                    onsave = {handleSave}
+                    draft-values = {draftValues}                    
+                ></lightning-datatable>
+            </div>
+        </template>
+        <template lwc:if = {showData}>
+            <div>
+                <lightning-formatted-text value = "Opportunity List"></lightning-formatted-text>
+                <lightning-datatable 
+                    key-field = 'id'
+                    data = {opportunityList}
+                    columns = {oppCols}
+                    ></lightning-datatable>
+            </div>
+        </template>
+    </lightning-card>
+</template>

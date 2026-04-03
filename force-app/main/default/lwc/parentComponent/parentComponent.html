@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title = "Parent Component">
+        <lightning-input label = "Enter some Value" value = {inputValue} onchange = {handleChange} ></lightning-input>
+        <lightning-button label = "Send Data" variant = "brand" onclick = {handleSendData}></lightning-button>
+        <lightning-button label = "Reset Message" variant = "destructive" onclick = {handleResetMessage}></lightning-button>
+        <div>
+            <lightning-formatted-text value = {messageFromChild}></lightning-formatted-text>
+        </div>        
+        <lightning-card>
+        <div>
+            <c-child-component message = {messageToChild} onsend = {onSendMessageToParent}></c-child-component>
+        </div>
+    </lightning-card>
+    </lightning-card>   
+    
+</template>

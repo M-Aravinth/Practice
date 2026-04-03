@@ -49,6 +49,7 @@ accountDetails(result){
         this.account = result.data.map(a => ({
             ...a,
             URL: `/lightning/r/Account/${a.Id}/view`
+            
         }));
         this.totalPages = Math.ceil(this.account.length / this.pageSize);
         this.updatePaginatedData();
@@ -97,14 +98,14 @@ get isNextDisabled(){
 }
 
 async handleSave(event){
-    const records = event.detail.draftValues.map((draftValue =>{
+    /*const records = event.detail.draftValues.map((draftValue =>{
         const fields = {...draftValue};
         return {fields};
-    }));
+    }));*/
 
     try {
         //this.draftValues = [];
-        const recordsForUpdate = records.map((record => updateRecord(record)));
+        //const recordsForUpdate = records.map((record => updateRecord(record)));
         //await Promise.all(recordsForUpdate);
         await updateAccounts({data : event.detail.draftValues});
         this.draftValues = [];

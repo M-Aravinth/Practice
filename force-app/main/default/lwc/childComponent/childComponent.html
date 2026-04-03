@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title = "Child Component">
+        <lightning-formatted-text value = {message}></lightning-formatted-text>
+        <lightning-input label = "Enter some Value" value = {inputValue} onchange = {handleChange} ></lightning-input>
+        <lightning-button label = "Send Message To Parent" variant = "Success" onclick = {handleSendMessageToParent}></lightning-button>
+    </lightning-card>
+</template>
