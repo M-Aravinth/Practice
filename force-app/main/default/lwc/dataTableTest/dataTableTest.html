@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title ='Account Data Table Demo'>
+        <lightning-button label="Load Account Data" onclick={loadAccountData} class="slds-m-bottom_small"></lightning-button>
+        <lightning-datatable
+            key-field='Id'
+            columns={columns}
+            data = {accounts}
+            onsave = {handleSave}
+            draft-values={draftValues}
+            sorted-by ={sortedBy}
+            sort-direction ={sortedDirection}
+            onsort = {handleSort}
+            >
+        </lightning-datatable>
+    </lightning-card>
+</template>

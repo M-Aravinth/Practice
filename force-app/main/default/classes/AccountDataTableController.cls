@@ -17,9 +17,10 @@ public with sharing class AccountDataTableController {
             accountLists.add(new Account(Id = null,Phone = acc.Phone));
         }
         try{
-            System.Database.Update(accountLists);
+            update accountLists;
+            //System.Database.Update(accountLists);
         }Catch(Exception e){
-
+            //throw new AuraHandledException('Error thrown from apex class');
         }
         //System.Database.Update(accountLists);
 
